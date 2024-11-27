@@ -1,0 +1,388 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Modern, professional font */
+    background-color: #fff; /* White background */
+    color: #333;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.presentation {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Slide Styling */
+.slide {
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full viewport width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start; /* Ensures each slide snaps into place */
+    overflow: hidden; /* Prevents content from spilling outside */
+    position: relative; /* Keeps each slide positioned within its bounds */
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Slightly off-screen */
+}
+
+.slide.active {
+    opacity: 1; /* Makes the slide visible */
+    transform: translateY(0); /* Moves it into view */
+}
+
+/* Smooth Scrolling Behavior */
+html {
+    scroll-behavior: smooth; /* Smooth scrolling between slides */
+}
+
+body {
+    scroll-snap-type: y mandatory; /* Vertical snap scrolling */
+    overflow-y: scroll; /* Enables vertical scrolling */
+    margin: 0;
+}
+
+/* Title Styling */
+h1.animated-title, h2 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    color: #007BFF; /* Bright blue for emphasis */
+    margin-bottom: 30px; /* Adds spacing below the title */
+    text-shadow: 2px 2px 10px rgba(0, 0, 255, 0.1); /* Subtle shadow for depth */
+    font-weight: 700;
+    text-align: center; /* Center-align titles */
+}
+
+/* Slide-Specific Content */
+.slide p {
+    font-size: 1.6rem;
+    color: #555; /* Neutral text color */
+    line-height: 1.8; /* Balanced line spacing */
+    max-width: 800px; /* Restrict width for readability */
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Slide 1: Title Styling */
+h1.animated-title {
+    font-size: 5rem; /* Large impactful title */
+    text-transform: uppercase;
+    background: linear-gradient(to right, #007BFF, #00BFFF);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 2px 2px 10px rgba(0, 0, 255, 0.1);
+    margin-bottom: 30px; /* Adds spacing below the title */
+}
+
+/* Slide 2 Styling */
+.slide:nth-child(2) {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.slide-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.text-container {
+    width: 45%;
+    text-align: left;
+}
+
+.text-container h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #007BFF; /* Bright blue for emphasis */
+    margin-bottom: 20px;
+}
+
+.text-container p.content {
+    font-size: 1.6rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.text-container p.citation {
+    font-size: 1.2rem;
+    color: #555;
+    font-style: italic;
+}
+
+.chart-container {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CSS for Slide 2 to increase whistleChart size */
+#whistleChart {
+    width: 800px;  /* Set a larger width */
+    height: 500px; /* Set a larger height */
+    margin: 0 auto; /* Center the chart */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    border-radius: 10px; /* Smooth rounded corners for a modern look */
+}
+
+
+/* Slide 4 Styling */
+.slide:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.slide-content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Left Side (Image & Subtext) */
+.left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+}
+
+.left-side .image {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    margin-bottom: 20px;
+}
+
+.left-side .highlight {
+    font-size: 1.6rem;
+    color: #007BFF;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Right Side (Title) */
+.right-side {
+    width: 45%;
+    text-align: right;
+}
+
+.right-side h2 {
+    font-size: 4rem;
+    color: #007BFF;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Slide 3: Why Don’t People Whistle-Blow */
+.slide:nth-child(3) {
+    position: relative;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.slide:nth-child(3) h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #007BFF; /* Bright blue */
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.list-container {
+    position: relative;
+    width: 100%;
+    height: 60%; /* Reserve space for the items */
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 150px; /* Fixed width for consistency */
+    padding: 10px;
+    background: #f8f9fa; /* Subtle background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.list-item .icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #007BFF; /* Matches title color */
+}
+
+.list-item p {
+    font-size: 1.4rem;
+    color: #555; /* Neutral text color */
+    margin: 0;
+}
+
+/* Responsive Design for Slide 4 */
+@media (max-width: 768px) {
+    .list-container {
+        flex-direction: column; /* Stack items vertically */
+        height: auto; /* Adjust height for mobile */
+    }
+    .list-item {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 300px; /* Restrict width */
+    }
+}
+
+/* CSS for Slide 6 to move boxes to the left */
+.slide-6 {
+    position: relative;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: flex-start; /* Aligns the boxes more to the left */
+}
+
+.slide-6 .box {
+    margin-left: 0; /* Removing any additional left margin */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(20% - 10px);
+}
+
+.slide-6 .icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+
+.slide-6 .box-title {
+    font-weight: bold;
+    color: #007BFF;
+    margin-top: 10px;
+}
+
+.slide-6 .box-content {
+    font-size: 1rem;
+    color: #666;
+}
+/* Chart Container Styling for Slide 6 */
+#psychologicalSafetyChart {
+    width: 100%; /* Set to full width */
+    height: 500px; /* Adjust the height to be larger */
+    max-width: 800px; /* Optional, limits the maximum size */
+    margin: 0 auto; /* Center the chart */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Smooth rounded corners */
+}
+
+.chart-container {
+    flex: 2; /* Take up twice as much space as the icons */
+    padding: 10px;
+    margin-left: 20px; /* Adds space between the chart and the icons */
+}
+
+canvas {
+    max-width: 90%;
+    margin: 0 auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Smooth rounded corners */
+}
+/* Slide 7: How to Speak Up Successfully */
+.slide-title {
+    font-size: 3rem; /* Large and bold */
+    color: #007BFF; /* Dark gray color */
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    text-align: center; /* Center the title */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns for items */
+    gap: 40px; /* Space between grid items */
+    justify-items: center; /* Centers content within each grid cell */
+    max-width: 1200px; /* Limits the grid width for better focus */
+    margin: 0 auto; /* Centers the grid on the slide */
+}
+
+.grid-item {
+    text-align: center;
+    max-width: 300px; /* Restricts item width */
+}
+
+.icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Circular icons */
+    color: white; /* Icon color */
+    font-size: 2rem; /* Icon font size */
+    line-height: 80px; /* Vertically center the text inside the circle */
+    text-align: center;
+    margin: 0 auto 20px auto; /* Center the icon and add spacing below */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.item-title {
+    font-size: 1.5rem; /* Bold and readable */
+    font-weight: bold;
+    color: #333; /* Dark gray color */
+    margin-bottom: 10px; /* Space between title and description */
+}
+
+.item-desc {
+    font-size: 1.2rem; /* Slightly smaller for descriptions */
+    color: #555; /* Subtle gray for readability */
+    line-height: 1.6;
+}
+
+/* Slide 8 Styling (Conclusion) */
+.slide:nth-child(8) h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: #007BFF; /* Bright blue for emphasis */
+    margin-bottom: 30px; /* Adds spacing below the title */
+}
+
+.slide:nth-child(8) .content {
+    font-size: 1.8rem;
+    color: #555;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8; /* Comfortable spacing for readability */
+    padding: 20px;
+}
+
